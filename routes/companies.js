@@ -55,7 +55,7 @@ router.post('/', async (req, res) =>{
         
         //redirect to this company's page
         // res.redirect(`companies/${newCompany.id}`)
-        res.redirect('companies')
+        res.redirect('/companies')
     }catch{
         //if error occurs, re-render the new page
         res.render('companies/new', {

@@ -1,0 +1,11 @@
+<h2>New application HERE</h2>
+
+<!--send a post request to /applications route -->
+<!--the form is a multipart form-->
+<form action='/applications' method='POST' enctype="multipart/form-data">
+    <%- include('_form_field.ejs')%>
+    <!--cancel the creation of a new company-->
+    <a href='/applications'>Cancel</a>
+    <!--submit the form-->
+    <button type='submit'>Create</button>
+</form>

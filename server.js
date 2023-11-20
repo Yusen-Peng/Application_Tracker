@@ -25,6 +25,10 @@ const indexRouter = require('./routes/index')
 //import the company router
 const companyRouter = require('./routes/companies')
 
+//import the application router
+const applicationRouter = require('./routes/applications')
+
+
 //set up the view engine
 app.set('view engine', 'ejs')
 
@@ -63,6 +67,9 @@ app.use('/', indexRouter)
 
 //link the company router to a particular path
 app.use('/companies', companyRouter)
+
+//link the application router to a particular path
+app.use('/applications', applicationRouter)
 
 //listen to the port in the environment file; default 3000
 app.listen(3000)

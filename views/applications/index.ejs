@@ -1,0 +1,21 @@
+<h2>Search Applications</h2>
+<!--make a get request to the /companies route -->
+<form action='/applications' method='GET'>
+    <div>
+        <label>Job Title</label>
+        <input type='text' name='title' value='<%= searchOptions.title %>'/>        
+    </div>
+    <div>
+        <label>Application Status</label>
+        <input type='text' name='status' value='<%= searchOptions.status %>'/>
+    </div>
+
+    <button type='submit'>search your application</button>
+</form>
+<br>
+<div>
+    <% applications.forEach(application => { %>
+        <img height='150' width='100' src='<%= application.resumeFilePath %>'/>
+        <div><%= application.status %></div>
+    <% }) %>
+</div>
