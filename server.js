@@ -1,8 +1,6 @@
 /**
- * 
- * 
+ * main server
  */
-
 
 //load up different dependencies unless the app is under production
 if(process.env.NODE_ENV !== 'production'){

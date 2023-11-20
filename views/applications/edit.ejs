@@ -1,0 +1,10 @@
+<h2>Edit application HERE</h2>
+<!--send a put request to /applications/{id} route -->
+<!--the form is a multipart form-->
+<form action='/applications/<%= application.id %>?_method=PUT' method='POST' enctype="multipart/form-data">
+    <%- include('_form_field.ejs')%>
+    <!--cancel the creation of a new company-->
+    <a href='/applications'>Cancel</a>
+    <!--submit the form-->
+    <button type='submit'>Update</button>
+</form>

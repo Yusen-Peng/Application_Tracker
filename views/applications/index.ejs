@@ -15,8 +15,8 @@
 <br>
 <div>
     <% applications.forEach(application => { %>
-        <img height='150' width='100' src='<%= application.resumeFilePath %>'/>
-        <div><%=  %></div>
+        <a href='/applications/<%= application.id %>'><%= application.title %></a>
         <div><%= application.status %></div>
+        <div><%= application.appliedDate.toISOString().split('T')[0] %></div>
     <% }) %>
 </div>
