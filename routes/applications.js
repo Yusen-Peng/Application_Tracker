@@ -41,7 +41,6 @@ const upload = multer({
 //all applications route
 router.get('/', async (req, res) =>{
     try{
-
         //implement the search options
         let searchOptions = {}
         //Note: get request sends information through a query string

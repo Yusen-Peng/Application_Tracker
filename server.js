@@ -19,6 +19,10 @@ const expressLayouts = require('express-ejs-layouts')
 //import the body parser to parse data in the request
 const bodyParser = require('body-parser')
 
+
+//import method-override
+const methodOverride = require('method-override')
+
 //import the index router
 const indexRouter = require('./routes/index')
 
@@ -46,6 +50,10 @@ app.use(express.static('public'))
 
 //use the bodyParser.urlencoded since data are sent by url
 app.use(bodyParser.urlencoded({limit: '10mb', extended: false}))
+
+//use method-override in the app 
+//by defining the query string format to override method
+app.use(methodOverride('_method'))
 
 //set up MongoDB database
 const mongoose = require('mongoose')

@@ -16,6 +16,7 @@
 <div>
     <% applications.forEach(application => { %>
         <img height='150' width='100' src='<%= application.resumeFilePath %>'/>
+        <div><%=  %></div>
         <div><%= application.status %></div>
     <% }) %>
 </div>

@@ -8,5 +8,10 @@
 <br>
 <% companies.forEach(company => { %>
     <div><%= company.name %></div>
-
+    <!--view the company-->
+    <a href='/companies/<%= company.id %>'>View</a>
+    <!--edit the company -->
+    <a href='/companies/<%= company.id %>/edit'>Edit</a>
+    <!--delete the company: use method overriding to send request -->
+    <%- include('../components/deleteForm', {url: `companies/${company.id}`} )  %>
 <% }) %>

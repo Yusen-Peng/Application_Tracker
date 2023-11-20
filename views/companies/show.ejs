@@ -1,0 +1,11 @@
+<!--show page for individual companies-->
+<h2><%= company.name %></h2>
+<a href='/companies/<%= company.id %>/edit'>Edit</a>
+<%- include('../components/deleteForm', {url: `/companies/${company.id}`}) %>
+
+<% if(applicationsToCompany.length > 0){ %>
+    <% applicationsToCompany.forEach(application => { %>
+        <img height='150' width='100' src='<%= application.resumeFilePath %>'/>
+        <div><%= application.status %></div>
+    <% }) %>
+<% }%>
