@@ -1,11 +1,17 @@
-<h2>Edit company HERE</h2>
+<h2 class='page-header'>Edit existing company</h2>
 
 <!--send a put request to /companies/{id} route -->
 <form action='/companies/<%= company.id %>?_method=PUT' method='POST'>
 
-    <%- include('_form_field.ejs')%>
-    <!--cancel the creation of a new company-->
-    <a href='/companies/<%= company.id %>'>Cancel</a>
-    <!--submit the form-->
-    <button type='submit'>Update</button>
+    <div class="form-row">
+        <div class="form-item">
+            <%- include('_form_field.ejs')%>
+        </div>
+    </div>
+    <div class="btn-row form-row-end">
+        <!--cancel the creation of a new company-->
+        <a class="btn btn-dangerous" href='/companies'>Cancel</a>
+        <!--submit the form-->
+        <button class="btn btn-primary" type='submit'>Update</button>
+    </div>
 </form>

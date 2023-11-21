@@ -1,11 +1,32 @@
 <!--show page for individual companies-->
-<h2><%= company.name %></h2>
-<a href='/companies/<%= company.id %>/edit'>Edit</a>
-<%- include('../components/deleteForm', {url: `/companies/${company.id}`}) %>
+<div class="form-row">
+    <div class="form-item">
+        <h2><%= company.name %></h2>
+    </div>
+</div>
+<div class="btn-row">
+        <a class="btn btn-primary" href='/companies/<%= company.id %>/edit'>Edit</a>
+        <%- include('../components/deleteForm', {url: `/companies/${company.id}`}) %>
+</div>
+
+<br>
+<h3>
+    Recent applications:
+</h3>
+<br>
 
 <% if(applicationsToCompany.length > 0){ %>
     <% applicationsToCompany.forEach(application => { %>
-        <img height='150' width='100' src='<%= application.resumeFilePath %>'/>
-        <div><%= application.status %></div>
+        <div class="form-row">
+            <div class="form-item">Job Title: <%= application.title %></div>
+            <div class="form-item">Application Status: <%= application.status %></div>
+        </div>
+        <div class="form-row">
+            <div class="form-item">Resume used: </div>
+        </div>
+
+        <img class="form-item" height='700' width='500' src='<%= application.resumeFilePath %>'/
+        
     <% }) %>
 <% }%>
+</div>

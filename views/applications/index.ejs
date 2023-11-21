@@ -1,22 +1,33 @@
-<h2>Search Applications</h2>
+<h2 class='page-header'>Search Applications</h2>
 <!--make a get request to the /companies route -->
 <form action='/applications' method='GET'>
-    <div>
-        <label>Job Title</label>
-        <input type='text' name='title' value='<%= searchOptions.title %>'/>        
+    <div class="form-row">
+        <div class="form-item">
+            <label>Job Title</label>
+            <input type='text' name='title' value='<%= searchOptions.title %>'/>        
+        </div>
+        <div class="form-item">
+            <label>Application Status</label>
+            <input type='text' name='status' value='<%= searchOptions.status %>'/>
+        </div>
     </div>
-    <div>
-        <label>Application Status</label>
-        <input type='text' name='status' value='<%= searchOptions.status %>'/>
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type='submit'>search your application</button>
     </div>
-
-    <button type='submit'>search your application</button>
 </form>
 <br>
-<div>
+<div class="form-row">
+    <div class="form-item">Job Title</div>
+    <div class="form-item">Application Status</div>
+    <div class="form-item">Applied Date</div>
+</div>
+
     <% applications.forEach(application => { %>
-        <a href='/applications/<%= application.id %>'><%= application.title %></a>
-        <div><%= application.status %></div>
-        <div><%= application.appliedDate.toISOString().split('T')[0] %></div>
+        <div class="form-row">
+            <a class="form-item no-underscore" href='/applications/<%= application.id %>'><%= application.title %></a>
+            <div class="form-item"><%= application.status %></div>
+            <div class="form-item"><%= application.appliedDate.toISOString().split('T')[0] %></div>
+        </div>
+        
     <% }) %>
 </div>

@@ -1,14 +1,20 @@
 <!--show page for individual applications-->
 <h2><%= application.title %></h2>
-<div>Job title: <%= application.title %></div>
-<div>Company: <%= application.company.name %></div>
-<div>Applied Date: <%= application.appliedDate.toISOString().split('T')[0] %></div>
-<div>resume used:
-    <img height='600' width='600' src='<%= application.resumeFilePath %>'/>
+<div class="form-row">
+    <div class="form-item">Job title: <%= application.title %></div>
+    <div class="form-item">Company: <%= application.company.name %></div>
+    <div class="form-item">Applied at <%= application.appliedDate.toISOString().split('T')[0] %></div>
 </div>
-<!--edit the application-->
-<a href='/applications/<%= application.id %>/edit'>Edit</a>
-<!--view the company-->
-<a href='/companies/<%= application.company.id %>'>View Company</a>
-<!--delete the application-->
-<%- include('../components/deleteForm', {url: `/applications/${application.id}`}) %>
+<div class="form-row">
+    <div class="form-item">resume used:</div>
+    <img class="form-item "height='700' width='500' src='<%= application.resumeFilePath %>'/>
+</div>
+    
+<div class="btn-row">
+    <!--edit the application-->
+    <a class="btn btn-primary" href='/applications/<%= application.id %>/edit'>Edit</a>
+    <!--view the company-->
+    <a  class="btn btn-primary" href='/companies/<%= application.company.id %>'>View Company</a>
+    <!--delete the application-->
+    <%- include('../components/deleteForm', {url: `/applications/${application.id}`}) %>
+</div>

@@ -1,0 +1,61 @@
+:root{
+    --color-btn-primary-background: rgb(0, 179, 255);
+    --color-btn-primary-background-dark: lightblue;
+    --color-btn-dangerous-background: rgb(255, 0, 85);
+    --color-btn-dangerous-background-dark:rgb(255, 0, 255);
+    --color-btn-primary-text: black;
+    --color-btn-border: black;
+
+}
+
+/*basic style for buttons*/
+.btn {
+    border: 1px solid var(--color-btn-border);
+    border-radius: 0.5rem;
+    /*top+buttom: 0.5rem; left+right: 1rem*/
+    padding: 0.5rem 1rem;
+    font-size: 0.6rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+/*addidtional style for primary buttons*/
+.btn-primary{
+    color: var(--color-btn-primary-text);
+    background-color: var(--color-btn-primary-background);
+}
+
+/*hover for buttons*/
+.btn-primary:hover{
+    color: var(--color-btn-primary-text);
+    background-color: var(--color-btn-primary-background-dark);
+}
+
+
+/*additional style for dangerous buttons (delete)*/
+.btn-dangerous{
+    color: var(--color-btn-primary-text);
+    background-color: var(--color-btn-dangerous-background);
+}
+
+/*hover for buttons*/
+.btn-dangerous:hover{
+    color: var(--color-btn-primary-text);
+    background-color: var(--color-btn-dangerous-background-dark);
+}
+
+/*style for a button row*/
+.btn-row{
+    /*side by side*/
+    display:flex;
+    align-items: flex-start; 
+}
+
+
+/*style for single button in the row*/
+.btn-row > * {
+    /*space button out from each other*/
+    margin-left: 1rem; 
+}

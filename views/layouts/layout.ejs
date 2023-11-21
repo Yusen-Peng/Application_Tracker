@@ -6,20 +6,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--import the CSS file-->
+    <link rel="stylesheet" href="/stylesheets/main.css">
     <title>Application Tracker</title>
 </head>
 <body>
-    Before
-    <br>
-    <!-- render the header -->
-    <%- include('../components/header.ejs') %>
+    <div class="container">
+        <!-- render the header -->
+        <%- include('../components/header.ejs') %>
 
-    <!-- report any error if appropriate -->
-    <%- include('../components/errorMessage.ejs') %>    
-
-    <!--placeholder for the body-->
-    <%- body %>
-    <br>
-    After
+        <div class="inner-container">
+            <!-- report any error if appropriate -->
+            <%- include('../components/errorMessage.ejs') %>    
+            <!--placeholder for the body-->
+            <%- body %>
+        </div>
+    </div>
 </body>
 </html>

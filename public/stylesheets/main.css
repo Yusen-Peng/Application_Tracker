@@ -1,0 +1,40 @@
+@import 'shared/variables.css';
+@import 'shared/header.css';
+@import 'shared/buttons.css';
+@import 'shared/form.css';
+
+:root{
+    font-size: 30px;
+    color: var(--color-text-light);
+}
+
+
+body {
+    background: linear-gradient(to right, var(--color-background-dark), var(--color-background-light))
+}
+
+.container{
+    max-width: 1200px;
+    margin:auto;
+    margin-bottom: 3rem;
+}
+
+.inner-container {
+    /*top+bottom: no indentation; left+right: 2 rem*/
+    margin: 0 1.5rem;
+}
+
+.page-header{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.home-page{
+    text-align: center;
+    font-size: 2.9rem;
+}
+
+.no-underscore{
+    text-decoration: none;
+    color: var(--color-text-light);
+}

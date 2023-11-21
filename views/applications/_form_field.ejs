@@ -1,53 +1,54 @@
-<div>
-    <!--input for job title-->
-    <label>Job title</label>
-    <input type='text' name='title' value='<%= application.title %>'/>
+<div class="form-row">
+    <div class="form-item">
+        <!--input for job title-->
+        <label>Job title</label>
+        <input type='text' name='title' value='<%= application.title %>'/>
+    </div>
+    <div class="form-item"> 
+        <!--input for company-->
+        <label>Company</label>
+        <select name='company'>
+            <% companies.forEach(company =>{ %>  
+                <!--note: application.company returns an ID -->
+                <% if(application.company === company.id){ %>
+                    <!--if the user already selects this company, it must show being selected-->
+                    <option selected label='<%- company.name %>' value='<%- company.id %>'></option>
+                <% }else{ %>
+                    <!--otherwise, it must show being not selected-->
+                    <option label='<%- company.name %>' value='<%- company.id %>'></option>
+                <% }%>
+            <% }) %>
+        </select>
+    </div>
 </div>
 
-<div>
-    <!--input for company-->
-    <label>Company</label>
-    <select name='company'>
-        <% companies.forEach(company =>{ %>  
-            <!--note: application.company returns an ID -->
-            <% if(application.company === company.id){ %>
-                <!--if the user already selects this company, it must show being selected-->
-                <option selected label='<%- company.name %>' value='<%- company.id %>'></option>
-            <% }else{ %>
-                <!--otherwise, it must show being not selected-->
-                <option label='<%- company.name %>' value='<%- company.id %>'></option>
-            <% }%>
-        <% }) %>
-    </select>
+<div class="form-row">
+    <div class="form-item">
+        <!--input for application status-->
+        <label>Application Status</label>
+        <select name='status'>
+            <option label='Pending' value='Pending'></option>
+            <option label='Reviewed' value='Reviewed'></option>
+            <option label='Declined' value='Declined'></option>
+        </select>
+    </div>
+    <div class="form-item">
+        <!--input for applied date-->
+        <label>Applied Date</label>
+        <!--check if the date is null; 
+        if not, convert the date to string and only grab YYYY-MM-DD portion of it -->
+        <input type='date' name='appliedDate' 
+            value="<%= application.appliedDate == null ? '' : 
+            application.appliedDate.toISOString().split('T')[0] %>"/>
+    </div>
 </div>
 
-<div>
-    <!--input for application status-->
-    <label>Application Status</label>
-    <select name='status'>
-        <option label='Pending' value='Pending'></option>
-        <option label='Reviewed' value='Reviewed'></option>
-        <option label='Declined' value='Declined'></option>
-    </select>
+<div class="form-row">
+    <div class="form-item form-single-item">
+        <!--input for resume file-->
+        <label>Resume upload</label>
+        <!--check if the date is null; 
+        if not, convert the date to string and only grab YYYY-MM-DD portion of it -->
+        <input type='file' name='resume'/>
+    </div>
 </div>
-
-<div>
-    <!--input for applied date-->
-    <label>Applied Date</label>
-    <!--check if the date is null; 
-    if not, convert the date to string and only grab YYYY-MM-DD portion of it -->
-    <input type='date' name='appliedDate' 
-        value="<%= application.appliedDate == null ? '' : 
-        application.appliedDate.toISOString().split('T')[0] %>"/>
-</div>
-
-<div>
-    <!--input for resume file-->
-    <label>Resume upload</label>
-    <!--check if the date is null; 
-    if not, convert the date to string and only grab YYYY-MM-DD portion of it -->
-    <input type='file' name='resume'/>
-</div>
-
-
-

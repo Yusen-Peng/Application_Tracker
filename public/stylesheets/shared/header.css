@@ -1,0 +1,56 @@
+:root{
+    --nav-title-font-size: 2rem;
+    --nav-title-font-weight: bold;
+    --nav-link-font-weight: 300;
+}
+
+
+.header-title{
+    color: var(--color-text-light);
+    /*get rid of the underscore*/
+    text-decoration: none;
+    font-size: var(--nav-title-font-size);
+    font-weight: var(--nav-title-font-weight);
+}
+
+.header-nav{
+    /*display elements side by side*/
+    display: flex;
+    /*elements can wrap around*/
+    flex-wrap: wrap;
+    /*enough space between the title and other tabs*/
+    justify-content: space-between;
+    /*items are aligned in the center*/
+    align-items: center;
+    /*some margin at the bottom*/
+    margin-bottom: 3rem;
+}
+
+/*style the unordered list*/
+.header-nav ul{
+    /*display elements side by side*/
+    display: flex;
+    /*get rid of extra spacing*/
+    margin: 0;
+    padding: 0;
+}
+
+/*stype each tab text*/
+.header-nav li{
+    /*get rid of annoying dots*/
+    list-style: none;
+}
+
+/*style each tab link*/
+.header-nav li a {
+    text-decoration: none;
+    color: var(--color-text-light);
+    font-weight: var(--nav-link-font-weight);
+    /*nice padding in between link and text*/
+    padding: 1rem;
+}
+
+/*stype hover effect*/
+.header-nav li a:hover, .header-title:hover{
+    color: white;
+}

@@ -1,17 +1,31 @@
-<h2>Search Companies</h2>
+<h2 class='page-header'>Search Companies</h2>
 <!--make a get request to the /companies route -->
 <form action='/companies' method='GET'>
-    <label>Name</label>
-    <input type='text' name='name' value='<%= searchOptions.name %>'/>
-    <button type='submit'>search</button>
+    <div class="form-row">
+        <div class="form-item">
+            <label>Name</label>
+            <input type='text' name='name' value='<%= searchOptions.name %>'/>
+        </div>
+    </div>
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type='submit'>search</button>
+    </div>
 </form>
 <br>
 <% companies.forEach(company => { %>
-    <div><%= company.name %></div>
-    <!--view the company-->
-    <a href='/companies/<%= company.id %>'>View</a>
-    <!--edit the company -->
-    <a href='/companies/<%= company.id %>/edit'>Edit</a>
-    <!--delete the company: use method overriding to send request -->
-    <%- include('../components/deleteForm', {url: `companies/${company.id}`} )  %>
+    <div class="form-row">
+        <div class="form-item">
+            <div><%= company.name %></div>
+        </div>
+        <div class="form-item">
+            <div class="btn-row form-row form-row-end">
+                <!--view the company-->
+                <a class="btn btn-primary" href='/companies/<%= company.id %>'>View</a>
+                <!--edit the company -->
+                <a class="btn btn-primary" href='/companies/<%= company.id %>/edit'>Edit</a>
+                <!--delete the company: use method overriding to send request -->
+                <%- include('../components/deleteForm', {url: `companies/${company.id}`} )  %>
+            </div>
+        </div>
+    </div>
 <% }) %>

@@ -83,7 +83,7 @@ router.get('/new', async (req, res) => {
             application: application
         })
     }catch{
-        res.redirect('applications')
+        res.redirect('/')
     }
 })
 
@@ -137,7 +137,7 @@ router.post('/', upload.single('resume'), async (req, res) => {
             })
 
         }catch{
-            res.redirect('applications')
+            res.redirect('/')
         }
     }
 })
@@ -236,7 +236,7 @@ router.put('/:id', upload.single('resume'), async (req, res) =>{
             })
 
         }catch{
-            res.redirect('applications')
+            res.redirect('/')
         }
     }
 })
